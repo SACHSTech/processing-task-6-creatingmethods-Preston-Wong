@@ -10,7 +10,7 @@ In this task, you will learn about:
 
 
 ## Step 1 - Lesson
-Acquire the learning objectives by reviewing [this page from happycoding.io](https://happycoding.io/tutorials/processing/creating-functions)
+Acquire the learning objectives by reviewing [this page from happycoding.io](`https://happycoding.io/tutorials/processing/creating-functions`)
 
 ## Step 2 - Task
 Demonstrate your learning objectives by:
