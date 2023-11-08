@@ -38,7 +38,7 @@ public class Sketch extends PApplet {
     drawHouse(275,700,0,0,255);
     drawHouse(500,700,75,0,130);
     drawHouse(725,700,75,0,130);
-    drawHouse(950,700,255,0,0);
+    drawHouse(950,700,	50, 205, 50);
 
   }
 
@@ -52,7 +52,7 @@ public class Sketch extends PApplet {
    * Draws the house, roof, window, and door with the correct colour 
    * 
    */
-  
+
   public void drawHouse(int intHouseWidth, int intHouseHeight, int intColour1, int intColour2, int intColour3) {
 
 	 	  // Body of the house
@@ -60,11 +60,11 @@ public class Sketch extends PApplet {
        rect(intHouseWidth, intHouseHeight, 200, 190);
         
        // Roof of the house
-       fill(intColour1, intColour2, intColour3);
+       fill(210,100,75);
        triangle(intHouseWidth, intHouseHeight, intHouseWidth + 100, intHouseHeight - 100, intHouseWidth + 200, intHouseHeight);
    
        // Window
-       fill(intColour1, intColour2, intColour3);
+       fill(255);
        ellipse(intHouseWidth + 100, intHouseHeight - 45,50,50);
        line(intHouseWidth + 125, intHouseHeight - 45, intHouseWidth + 75,intHouseHeight - 45);
        stroke(0);
@@ -72,7 +72,7 @@ public class Sketch extends PApplet {
        stroke(0);
    
        // Door and door handle
-       fill(intColour1, intColour2, intColour3);
+       fill(245, 245, 220);
        rect(intHouseWidth + 55, intHouseHeight + 65,90,125);
        fill(0);
        ellipse(intHouseWidth + 130, intHouseHeight + 125,10,10);
