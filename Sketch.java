@@ -24,14 +24,35 @@ public class Sketch extends PApplet {
    */
   public void draw() {
     
-    
-    for (int intY= 100; intY< 750; intY+=300) {
-      for (int intX = 50; intX < 1000; intX += 300){ 
-        drawHouse(intX, intY, (intX / 6) + (intY/ 8) + TurnWhite(), (intX / 2) + (intY/ 4) + TurnWhite(),(intX / 4) + (intY / 2) + TurnWhite());
-        drawPerson(intX, intY,10, (intX / 6) + (intY/ 8) + TurnWhite(), (intX / 2) + (intY / 4) + TurnWhite(),(intX / 4) + (intY / 2) + TurnWhite());    
-      } 
+    // sees if a moues button has been pressed
+    if (mousePressed) {
+
+      // determines the y value for the house and person
+      for (int intY= 100; intY< 750; intY+=300) {
+
+        // determines the x value for the houes and person
+        for (int intX = 50; intX < 1000; intX += 300){ 
+
+          // uses the x and y values from the 2 for loops above along with the TurnWhite method do determine the colour of the houses and people 
+          drawHouse(intX, intY, (intX / 6) + (intY/ 8) + TurnWhite(true), (intX / 2) + (intY/ 4) + TurnWhite(true), (intX / 4) + (intY / 2) + TurnWhite(true));
+          drawPerson(intX, intY,10, (intX / 6) + (intY/ 8) + TurnWhite(true), (intX / 2) + (intY / 4) + TurnWhite(true), (intX / 4) + (intY / 2) + TurnWhite(true));    
+        } 
+      }
+
+    }else {
+
+      // determines the y value for the house and person
+      for (int intY= 100; intY< 750; intY+=300) {
+
+        // determines the x value for the houes and person
+        for (int intX = 50; intX < 1000; intX += 300){ 
+
+          // uses the x and y values from the 2 for loops above along with the TurnWhite method do determine the colour of the houses and people 
+          drawHouse(intX, intY, (intX / 6) + (intY/ 8), (intX / 2) + (intY/ 4), (intX / 4) + (intY / 2) );
+          drawPerson(intX, intY,10, (intX / 6) + (intY/ 8) , (intX / 2) + (intY / 4) , (intX / 4) + (intY / 2) );    
+        } 
+      }
     }
-    
   }
 
   /*
@@ -72,7 +93,6 @@ public class Sketch extends PApplet {
     ellipse(intHouseX + 130, intHouseY + 125,10,10);
   }
 
-
   /*
    * draws a person next to the house
    * @param intPresonX determines the x point of the person
@@ -103,15 +123,16 @@ public class Sketch extends PApplet {
 
   /*
    * chekcs to see if a mouse input has been used
+   * @param MouseDown sees if a mouse input has been used
    * changes the return value to 255 if there is a mouse input, but keeps it at 0 if there isn't
    */
-  public int TurnWhite() {
-    Integer intWhite = 0;
+  public int TurnWhite(boolean MouseDown) {
 
-    if (mousePressed) {
-      return intWhite = 255;
+    // determines what value to return based on if there was a moues input used or not 
+    if (MouseDown) {
+      return 255;
     } else {
-      return intWhite = 0;
+      return 0;
     }
    
   }
