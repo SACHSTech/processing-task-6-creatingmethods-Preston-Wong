@@ -15,7 +15,7 @@ public class Sketch extends PApplet {
    * values here i.e background, stroke, fill etc.
    */
   public void setup() {
-    background(	0,0,0);
+    background(0,0,0);
   }
 
   /**
@@ -33,7 +33,7 @@ public class Sketch extends PApplet {
         for (int intX = 50; intX < 1000; intX += 300) { 
 
           // uses the TurnWhite method do determine the colour of the houses and people 
-          drawHouse(intX, intY, 255,255, 255);
+          drawHouse(intX, intY, 255,255,255);
           drawPerson(intX, intY,10, 255,255,255);    
         } 
       }
@@ -117,18 +117,17 @@ public class Sketch extends PApplet {
     line(intPersonX + 225, intPersonY + 140, intPersonX + 210, intPersonY + 175);
     line(intPersonX + 225, intPersonY + 120, intPersonX + 240, intPersonY + 110);
     line(intPersonX + 225, intPersonY + 120, intPersonX + 210, intPersonY + 110);
-
   }
 
   /*
-   * chekcs to see if a mouse input has been used
+   * checks to see if a mouse input has been used
    * @param mousePressed sees if a mouse input has been used
-   * @retruns true or false depending on if the mouse button has been pressed or not
+   * @return true or false depending if the mouse was pressed down or not 
    */
   public boolean TurnWhite(boolean MousePressed) {
 
-    // determines what value to return based on if there was a moues input used or not 
-    if (MousePressed == true) {
+    // determines true or false
+    if (mousePressed == true) {
       return true;
     }else {
       return false;
