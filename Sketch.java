@@ -2,7 +2,6 @@ import processing.core.PApplet;
 
 public class Sketch extends PApplet {
 	
-	
   /**
    * Called once at the beginning of execution, put your size all in this method
    */
@@ -24,31 +23,31 @@ public class Sketch extends PApplet {
    */
   public void draw() {
     
-    // sees if a moues button has been pressed
+    // sees if a mouse button has been pressed
     if (mousePressed) {
-
+      
       // determines the y value for the house and person
-      for (int intY= 100; intY< 750; intY+=300) {
+      for (int intY = 100; intY < 750; intY += 300) {
 
         // determines the x value for the houes and person
-        for (int intX = 50; intX < 1000; intX += 300){ 
+        for (int intX = 50; intX < 1000; intX += 300) { 
 
-          // uses the x and y values from the 2 for loops above along with the TurnWhite method do determine the colour of the houses and people 
-          drawHouse(intX, intY, (intX / 6) + (intY/ 8) + TurnWhite(true), (intX / 2) + (intY/ 4) + TurnWhite(true), (intX / 4) + (intY / 2) + TurnWhite(true));
-          drawPerson(intX, intY,10, (intX / 6) + (intY/ 8) + TurnWhite(true), (intX / 2) + (intY / 4) + TurnWhite(true), (intX / 4) + (intY / 2) + TurnWhite(true));    
+          // uses the TurnWhite method do determine the colour of the houses and people 
+          drawHouse(intX, intY, TurnWhite(true), TurnWhite(true), TurnWhite(true));
+          drawPerson(intX, intY,10, TurnWhite(true), TurnWhite(true), TurnWhite(true));    
         } 
       }
 
     }else {
 
       // determines the y value for the house and person
-      for (int intY= 100; intY< 750; intY+=300) {
+      for (int intY = 100; intY < 750; intY += 300) {
 
         // determines the x value for the houes and person
-        for (int intX = 50; intX < 1000; intX += 300){ 
+        for (int intX = 50; intX < 1000; intX += 300) { 
 
-          // uses the x and y values from the 2 for loops above along with the TurnWhite method do determine the colour of the houses and people 
-          drawHouse(intX, intY, (intX / 6) + (intY/ 8), (intX / 2) + (intY/ 4), (intX / 4) + (intY / 2) );
+          // uses the x and y values from the 2 for loops above to determine the colour of the houses and people 
+          drawHouse(intX, intY, (intX / 6) + (intY / 8), (intX / 2) + (intY / 4), (intX / 4) + (intY / 2));
           drawPerson(intX, intY,10, (intX / 6) + (intY/ 8) , (intX / 2) + (intY / 4) , (intX / 4) + (intY / 2) );    
         } 
       }
@@ -129,11 +128,10 @@ public class Sketch extends PApplet {
   public int TurnWhite(boolean MouseDown) {
 
     // determines what value to return based on if there was a moues input used or not 
-    if (MouseDown) {
+    if (MouseDown == true) {
       return 255;
-    } else {
+    }else {
       return 0;
     }
-   
   }
 }
