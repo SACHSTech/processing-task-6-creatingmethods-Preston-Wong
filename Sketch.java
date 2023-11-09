@@ -24,12 +24,14 @@ public class Sketch extends PApplet {
    */
   public void draw() {
     
+    
     for (int intY= 100; intY< 750; intY+=300) {
       for (int intX = 50; intX < 1000; intX += 300){ 
-        drawHouse(intX, intY, (intX / 6) + (intY/ 8), (intX / 2) + (intY/ 4),(intX / 4) + (intY / 2));
-        drawPerson(intX, intY,10, (intX / 6) + (intY/ 8), (intX / 2) + (intY / 4),(intX / 4) + (intY / 2));    
+        drawHouse(intX, intY, (intX / 6) + (intY/ 8) + TurnWhite(), (intX / 2) + (intY/ 4) + TurnWhite(),(intX / 4) + (intY / 2) + TurnWhite());
+        drawPerson(intX, intY,10, (intX / 6) + (intY/ 8) + TurnWhite(), (intX / 2) + (intY / 4) + TurnWhite(),(intX / 4) + (intY / 2) + TurnWhite());    
       } 
     }
+    
   }
 
   /*
@@ -99,8 +101,18 @@ public class Sketch extends PApplet {
 
   }
 
-  public int drawDemensions(int intWidth1, int intWidth2) {
-    return intWidth1 - intWidth2;
-  }
+  /*
+   * chekcs to see if a mouse input has been used
+   * changes the return value to 255 if there is a mouse input, but keeps it at 0 if there isn't
+   */
+  public int TurnWhite() {
+    Integer intWhite = 0;
 
+    if (mousePressed) {
+      return intWhite = 255;
+    } else {
+      return intWhite = 0;
+    }
+   
+  }
 }
