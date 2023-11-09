@@ -15,7 +15,7 @@ public class Sketch extends PApplet {
    * values here i.e background, stroke, fill etc.
    */
   public void setup() {
-    background(0,0,0);
+    background(	0,0,0);
   }
 
   /**
@@ -24,7 +24,7 @@ public class Sketch extends PApplet {
   public void draw() {
     
     // sees if a mouse button has been pressed
-    if (mousePressed) {
+    if (TurnWhite(true)) {
       
       // determines the y value for the house and person
       for (int intY = 100; intY < 750; intY += 300) {
@@ -33,8 +33,8 @@ public class Sketch extends PApplet {
         for (int intX = 50; intX < 1000; intX += 300) { 
 
           // uses the TurnWhite method do determine the colour of the houses and people 
-          drawHouse(intX, intY, TurnWhite(true), TurnWhite(true), TurnWhite(true));
-          drawPerson(intX, intY,10, TurnWhite(true), TurnWhite(true), TurnWhite(true));    
+          drawHouse(intX, intY, 255,255, 255);
+          drawPerson(intX, intY,10, 255,255,255);    
         } 
       }
 
@@ -58,18 +58,18 @@ public class Sketch extends PApplet {
    * draws a house with width and height and colours with as well
    * @param intHouseX is the width of the house, roof, and door
    * @param intHouseY is the height for the house, roof, and door
-   * @param intColour1 is the R value of the RGB code
-   * @param intColour2 is the G value of the RGB code
-   * @param intColour3 is the B value of the RGB code
+   * @param intRed is the R value of the RGB code
+   * @param intGreen is the G value of the RGB code
+   * @param intBlue is the B value of the RGB code
    * Draws the house, roof, window, and door with the correct colour 
    * 
    */
 
-  public void drawHouse(int intHouseX, int intHouseY, int intColour1, int intColour2, int intColour3) {
+  public void drawHouse(int intHouseX, int intHouseY, int intRed, int intGreen, int intBlue) {
 
 	 	// Body of the house
     stroke(0);
-    fill(intColour1, intColour2, intColour3);
+    fill(intRed, intGreen, intBlue);
     rect(intHouseX, intHouseY, 200, 190);
        
     // Roof of the house
@@ -97,21 +97,21 @@ public class Sketch extends PApplet {
    * @param intPresonX determines the x point of the person
    * @param intPersonY determines the y poitn of the person
    * @param intHead determines the location of the head and head size
-   * intColour1 determiens the R in the RGB value
-   * intColour2 determines the G in the RGB value
-   * intColour3 determines the B in the RGB value
+   * intRed determiens the R in the RGB value
+   * intGreen determines the G in the RGB value
+   * intBlue determines the B in the RGB value
    * 
    */
   
-  public void drawPerson(int intPersonX, int intPersonY, int intHead, int intColour1, int intColour2, int intColour3) {
+  public void drawPerson(int intPersonX, int intPersonY, int intHead, int intRed, int intGreen, int intBlue) {
 
     // head of the person
     noFill();
-    stroke(intColour1,intColour2,intColour3);
+    stroke(intRed,intGreen,intBlue);
     ellipse(intPersonX + 225, intPersonY + 80, 20,20);
 
     // draws the person's body, legs, and arms 
-    stroke(intColour1,intColour2,intColour3);
+    stroke(intRed,intGreen,intBlue);
     line(intPersonX + 225, intPersonY + 140, intPersonX + 225, intPersonY + 90);
     line(intPersonX + 225, intPersonY + 140, intPersonX + 240, intPersonY + 175);
     line(intPersonX + 225, intPersonY + 140, intPersonX + 210, intPersonY + 175);
@@ -122,16 +122,16 @@ public class Sketch extends PApplet {
 
   /*
    * chekcs to see if a mouse input has been used
-   * @param MouseDown sees if a mouse input has been used
-   * changes the return value to 255 if there is a mouse input, but keeps it at 0 if there isn't
+   * @param mousePressed sees if a mouse input has been used
+   * @retruns true or false depending on if the mouse button has been pressed or not
    */
-  public int TurnWhite(boolean MouseDown) {
+  public boolean TurnWhite(boolean MousePressed) {
 
     // determines what value to return based on if there was a moues input used or not 
-    if (MouseDown == true) {
-      return 255;
+    if (MousePressed == true) {
+      return true;
     }else {
-      return 0;
+      return false;
     }
   }
 }
