@@ -30,37 +30,37 @@ public class Sketch extends PApplet {
   public void draw() {
 
     int intColour = ChangeColour(255);
-    System.out.println(intColour);
     fill(intColour);
 
-    if (mousePressed){
-      if (intColour < 0 ) {
-        // determines the y value for the house and person
-        for (int intY = 100; intY < 750; intY += 300) {
+  
+    if (intColour < -16711423) {
+      // determines the y value for the house and person
+      for (int intY = 100; intY < 750; intY += 300) {
 
-          // determines the x value for the houes and person
-          for (int intX = 50; intX < 1000; intX += 300) { 
+        // determines the x value for the houes and person
+        for (int intX = 50; intX < 1000; intX += 300) { 
 
-            // prints out the house and person with the chosen colour 
-            drawHouse(intX, intY, ChangeColour(255), ChangeColour(255), ChangeColour(255));
-            drawPerson(intX, intY,10,ChangeColour(255),ChangeColour(255),ChangeColour(255));    
-        } 
-      } 
+          // prints out the house and person with the chosen colour 
+          drawHouse(intX, intY, intColour/-1, intColour/-1, intColour/-1);
+          drawPerson(intX, intY,10,intColour/-1,intColour/-1,intColour/-1);    
+       } 
+     } 
     }
-  } else {
+    else if (intColour > 0) {
        // determines the y value for the house and person
-    for (int intY = 100; intY < 750; intY += 300) {
+      for (int intY = 100; intY < 750; intY += 300) {
 
-      // determines the x value for the houes and person
-      for (int intX = 50; intX < 1000; intX += 300) { 
+        // determines the x value for the houes and person
+        for (int intX = 50; intX < 1000; intX += 300) { 
 
-        // prints out the house and person with the chosen colour 
-        drawHouse(intX, intY, (intX / 6 + intY / 8) , (intX / 2 + intY / 4), (intX / 4 + intY / 2));
-        drawPerson(intX, intY,10, (intX / 6 + intY / 8) , (intX / 2 + intY / 4) , (intX / 4 + intY / 2));    
+          // prints out the house and person with the chosen colour 
+          drawHouse(intX, intY, (intX / 6 + intY / 8 + intColour / 8) , (intX / 2 + intY / 5 + intColour / 4), (intX / 4 + intY / 2 + intColour / 2));
+          drawPerson(intX, intY,10, (intX / 6 + intY / 8 + intColour / 8) , (intX / 2 + intY / 4 + intColour / 4) , (intX / 4 + intY / 2 + intColour / 2));    
         } 
       } 
     } 
   }
+
   /*
    * Draws a house with width and height and colours with as well
    * @param intHouseX is the width of the house, roof, and door
@@ -128,7 +128,7 @@ public class Sketch extends PApplet {
   /*
    * Checks to see if a mouse input has been used
    * @param mousePressed sees if a mouse input has been used
-   * @return true or false depending if the mouse was pressed down or not 
+   * @returns the colour under the mouse if the mouse button was pushed, otherwise it returns an number that the user sets
    * 
    */
   public int ChangeColour(int intColour) {
@@ -137,7 +137,7 @@ public class Sketch extends PApplet {
     if (mousePressed == true) {
       return get(mouseX, mouseY);
     }else {
-      return color(intColour);
+      return intColour;
     }
   }
 }
