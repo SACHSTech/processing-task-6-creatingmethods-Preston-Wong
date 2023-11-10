@@ -94,7 +94,7 @@ public class Sketch extends PApplet {
     // Door and door handle
     fill(245, 245, 220);
     rect(intHouseX + 55, intHouseY + 65,90,125);
-    fill(0);
+    fill(1);
     ellipse(intHouseX + 130, intHouseY + 125,10,10);
   }
 
@@ -126,8 +126,8 @@ public class Sketch extends PApplet {
   }
 
   /*
-   * Checks to see if a mouse input has been used
-   * @param mousePressed sees if a mouse input has been used
+   * checks if the mouse has been used and give back a number 
+   * @param intColour changes the colour that the default houses will be 
    * @returns the colour under the mouse if the mouse button was pushed, otherwise it returns an number that the user sets
    * 
    */
