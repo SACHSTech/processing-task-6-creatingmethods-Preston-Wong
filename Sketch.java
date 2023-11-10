@@ -1,5 +1,11 @@
 import processing.core.PApplet;
 
+/**
+ * prints out a grid of houses and people standing next to them with differnt colours, and changes all the colours to white when the mouse is pressed down 
+ * @author: Preton Wong
+ *
+ */
+
 public class Sketch extends PApplet {
 	
   /**
