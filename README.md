@@ -1,3 +1,5 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/3ceTRXoI)
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=12792931&assignment_repo_type=AssignmentRepo)
 # Processing Task 6 - Creating Methods
 
 ## Learning Objectives
@@ -8,7 +10,7 @@ In this task, you will learn about:
 
 
 ## Step 1 - Lesson
-Acquire the learning objectives by reviewing [this page from happycoding.io](https://happycoding.io/tutorials/processing/creating-functions)
+Acquire the learning objectives by reviewing [this page from happycoding.io](`https://happycoding.io/tutorials/processing/creating-functions`)
 
 ## Step 2 - Task
 Demonstrate your learning objectives by:
